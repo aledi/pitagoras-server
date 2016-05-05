@@ -1,0 +1,10 @@
+{
+    "endpoints": {
+        "ugarte": {
+            "appURL": "http://localhost:8888",
+            "databaseURI": "mongodb://<dbuser>:<dbpassword>@ds013202.mlab.com:13202/ugarteprueba",
+            "serverURL": "http://localhost:1337/",
+            "emailDomain": ""
+        }
+    }
+}

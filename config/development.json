@@ -1,0 +1,10 @@
+{
+    "endpoints": {
+        "ugarte": {
+            "appURL": "",
+            "databaseURI": "mongodb://<dbuser>:<dbpassword>@ds013202.mlab.com:13202/ugarteprueba",
+            "serverURL": "",
+            "emailDomain": ""
+        }
+    }
+}

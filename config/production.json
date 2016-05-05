@@ -1,0 +1,10 @@
+{
+    "endpoints": {
+        "ugarte": {
+            "appURL": "",
+            "databaseURI": "TODO",
+            "serverURL": "",
+            "emailDomain": ""
+        }
+    }
+}
