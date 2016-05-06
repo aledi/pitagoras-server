@@ -7,7 +7,7 @@ var path = require('path');
 var config = require('config');
 
 var api = new ParseServer({
-  databaseURI: config.databaseURI,
+  databaseURI: config.endpoints.ugarte.databaseURI,
   cloud: path.join(__dirname, '/cloud/main.js'),
   appId: 'ugartePrueba',
   appName: 'ugartePrueba',
