@@ -7,7 +7,7 @@ var path = require('path');
 var config = require('config');
 
 var api = new ParseServer({
-  databaseURI: config.endpoints.pitagoras.databaseURI,
+  databaseURI: "mongodb://parse:ftC-SnM-xkT-fc3@ds025762.mlab.com:25762/heroku_jp4qshb8",
   cloud: path.join(__dirname, '/cloud/main.js'),
   appId: 'pitagoras',
   appName: 'pitagoras',
