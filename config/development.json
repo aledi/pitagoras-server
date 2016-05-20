@@ -2,8 +2,8 @@
     "endpoints": {
         "pitagoras": {
             "appURL": "",
-            "databaseURI": "mongodb://parse:ftC-SnM-xkT-fc3@ds025802.mlab.com:25802/pitagoras-dev",
-            "serverURL": "http://pitagoras-server.herokuapp.com/",
+            "databaseURI": "mongodb://parse:parse@ds025802.mlab.com:25802/heroku_22t2zllw",
+            "serverURL": "https://pitagoras-server.herokuapp.com/",
             "emailDomain": ""
         }
     }
