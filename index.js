@@ -6,9 +6,8 @@ var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
 var config = require('config');
 
-console.log(config.endpoints.pitagoras.databaseURI, 'config')
 var api = new ParseServer({
-  databaseURI: config.endpoints.pitagoras.databaseURI,
+  databaseURI: process.env.MONGODB_URI,
   cloud: path.join(__dirname, '/cloud/main.js'),
   appId: 'pitagoras',
   appName: 'pitagoras',
