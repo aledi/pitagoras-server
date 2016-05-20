@@ -1,7 +1,6 @@
 var express = require('express');
 var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
-var config = require('config');
 
 var api = new ParseServer({
   databaseURI: process.env.MONGODB_URI,
