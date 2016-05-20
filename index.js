@@ -7,12 +7,12 @@ var path = require('path');
 var config = require('config');
 
 var api = new ParseServer({
-  databaseURI: config.endpoints.ugarte.databaseURI,
+  databaseURI: config.endpoints.pitagoras.databaseURI,
   cloud: path.join(__dirname, '/cloud/main.js'),
-  appId: 'ugartePrueba',
-  appName: 'ugartePrueba',
+  appId: 'pitagoras',
+  appName: 'pitagoras',
   masterKey: process.env.MASTER_KEY || 'master', //Add your master key here. Keep it secret!
-  serverURL: process.env.SERVER_URL || 'http://localhost:1337/ugarteprueba'  // Don't forget to change to https if needed
+  serverURL: process.env.SERVER_URL || 'http://localhost:1337/pitagoras'  // Don't forget to change to https if needed
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
 // If you wish you require them, you can set them as options in the initialization above:
@@ -24,7 +24,7 @@ var app = express();
 app.use('/public', express.static(path.join(__dirname, '/public')));
 
 // Serve the Parse API on the /parse URL prefix
-var mountPath = process.env.PARSE_MOUNT || '/ugarteprueba';
+var mountPath = process.env.PARSE_MOUNT || '/pitagoras';
 app.use(mountPath, api);
 
 // Parse Server plays nicely with the rest of your web routes
