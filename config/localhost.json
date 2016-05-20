@@ -1,8 +1,8 @@
 {
     "endpoints": {
-        "ugarte": {
+        "pitagoras": {
             "appURL": "http://localhost:8888",
-            "databaseURI": "mongodb://parse:parse@ds013202.mlab.com:13202/ugarteprueba",
+            "databaseURI": "mongodb://parse:ftC-SnM-xkT-fc3@ds025802.mlab.com:25802/pitagoras-dev",
             "serverURL": "http://localhost:1337/",
             "emailDomain": ""
         }

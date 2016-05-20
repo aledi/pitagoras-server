@@ -1,7 +1,7 @@
 {
-  "name": "ugarte-server",
+  "name": "pitagoras-server",
   "version": "1.0.0",
-  "description": "Ugarte Server (Parse)",
+  "description": "Pitagoras Server (Parse)",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/alexcris/server.git"
+    "url": "https://github.com/ecristerna/pitagoras-server.git"
   },
-  "author": "Ugarte",
+  "author": "Pitagoras",
   "license": "Unlicense",
   "bugs": {
-    "url": "https://github.com/alexcris/server/issues"
+    "url": "https://github.com/ecristerna/pitagoras-server/issues"
   },
-  "homepage": "https://github.com/alexcris/server",
+  "homepage": "https://github.com/ecristerna/pitagoras-server",
   "dependencies": {
     "config": "1.20.1",
     "express": "4.13.4",
