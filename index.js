@@ -1,33 +1,40 @@
+'use strict';
+
 var express = require('express');
-var ParseServer = require('parse-server').ParseServer;
-var path = require('path');
-
-var api = new ParseServer({
-  databaseURI: process.env.MONGODB_URI,
-  cloud: path.join(__dirname, '/cloud/main.js'),
-  appId: process.env.APP_ID,
-  appName: process.env.APP_NAME,
-  masterKey: process.env.MASTER_KEY,
-  serverURL: process.env.SERVER_URL
-});
-
-// Client-keys like the javascript key or the .NET key are not necessary with parse-server
-// If you wish you require them, you can set them as options in the initialization above:
-// javascriptKey, restAPIKey, dotNetKey, clientKey
-
 var app = express();
-
-// Serve the Parse API on the /parse URL prefix
-var mountPath = process.env.PARSE_MOUNT || '/pitagoras';
-app.use(mountPath, api);
-
-// Parse Server plays nicely with the rest of your web routes
-app.get('/', function(req, res) {
-  res.status(200).send('Pitagoras Parse Server');
-});
-
+var ParseServer = require('parse-server').ParseServer;
+var ParseDashboard = require('parse-dashboard');
+var path = require('path');
 var port = process.env.PORT || 1337;
 
-app.listen(port, function() {
+app.use('/pitagoras', new ParseServer({
+    databaseURI: process.env.MONGODB_URI,
+    cloud: path.join(__dirname, '/cloud/main.js'),
+    appId: process.env.APP_ID,
+    appName: process.env.APP_NAME,
+    masterKey: process.env.MASTER_KEY,
+    serverURL: process.env.SERVER_URL,
+    publicServerURL: process.env.SERVER_URL
+}));
+
+var apps = [{
+    serverURL: process.env.SERVER_URL,
+    appId: process.env.APP_ID,
+    masterKey: process.env.MASTER_KEY,
+    appName: process.env.APP_NAME
+}];
+
+// Mount dashboard
+app.use('/dashboard', new ParseDashboard({
+    apps: apps,
+    users: [{user: 'admin', pass: process.env.DASHBOARD_PASS}]
+}));
+
+// Redirect route to dashboard
+app.use('/', function (req, res) {
+    res.redirect('/dashboard');
+});
+
+app.listen(port, function () {
     console.log('pitagoras-server running on port ' + port + '.');
 });
